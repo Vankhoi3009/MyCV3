@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/CreateCV.css">
+    <script src="/javascripts/CreateCV.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>CV Builder</title>
+</head>
+<body>
+    <header class="header">
+        <h1>CV Builder</h1>
+        <button id="backButton" class="back-button">Back</button>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Create Your CV</h2>
+            <form id="cvForm">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Experience</legend>
+                    <div id="experienceFields">
+                        <div class="experience">
+                            <label for="jobTitle">Job Title:</label>
+                            <input type="text" class="jobTitle" required>
+                            
+                            <label for="company">Company:</label>
+                            <input type="text" class="company" required>
+                            
+                            <label for="experienceDates">Dates:</label>
+                            <input type="text" class="experienceDates" placeholder="e.g., Jan 2020 - Dec 2021" required>
+                            
+                            <label for="experienceDescription">Description:</label>
+                            <textarea class="experienceDescription" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <button type="button" id="addExperience">Add Experience</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Education</legend>
+                    <div id="educationFields">
+                        <div class="education">
+                            <label for="degree">Degree:</label>
+                            <input type="text" class="degree" required>
+                            
+                            <label for="institution">Institution:</label>
+                            <input type="text" class="institution" required>
+                            
+                            <label for="educationDates">Dates:</label>
+                            <input type="text" class="educationDates" placeholder="e.g., Sep 2016 - Jun 2020" required>
+                            
+                            <label for="educationDescription">Description:</label>
+                            <textarea class="educationDescription" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <button type="button" id="addEducation">Add Education</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Skills</legend>
+                    <textarea id="skills" rows="3" placeholder="List your skills here" required></textarea>
+                </fieldset>
+
+                <button type="submit">Generate CV</button>
+            </form>
+        </section>
+
+        <section class="cv-preview" id="cvPreview">
+            <h2>Your CV Preview</h2>
+            <div id="cvContent"></div>
+            <!-- Thêm nút tải về CV -->
+            <button id="downloadButton" class="btn"><i class="fa fa-download"></i> Download CV</button>
+            <!-- Thêm nút lưu CV -->
+            <button id="saveButton" class="btn"><i class="fa fa-save"></i> Save CV</button>
+            <!-- Thêm nút chia sẻ CV -->
+            <button id="shareButton" class="btn"><i class="fa fa-share"></i> Share CV</button>
+
+        </section>
+    </main>
+</body>
+</html>

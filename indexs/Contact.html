@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/Contact.css">
+    <link rel="stylesheet" href="/styles/Home.css">
+    <script src="https://kit.fontawesome.com/c9f5871d83.js" crossorigin="anonymous"></script>
+    <script src="/javascripts/Contact.js" defer></script>
+    <title>Contact Us - CV Builder</title>
+</head>
+<body>
+    <header class="header">
+        <div class="menu-toggle" id="menuToggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav class="nav" id="navMenu">
+            <a href="Home.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="CreateCV.html">Create CV</a>
+            <a href="#contact" class="active">Contact</a>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button id="searchButton">Search</button>
+        </div>
+        <div class="icon_login">
+            <a style="color: aliceblue;" href="Login.html">
+                Login <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>If you have any questions, feel free to reach out to us. We're here to help!</p>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CV Builder. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

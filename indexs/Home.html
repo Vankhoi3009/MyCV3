@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/Home.css">
+        <script src="/javascripts/Home.js" defer></script>
+        <script src="https://kit.fontawesome.com/c9f5871d83.js" crossorigin="anonymous"></script>
+        <title>Home - CV Builder</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="menu-toggle" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav class="nav" id="navMenu">
+                <a href="Home.html">Home</a>
+                <a href="About.html">About</a>
+                <a href="CreateCV.html">Create CV</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <button id="searchButton">Search</button>
+            </div>
+            <div class="icon_login">
+                <a style="color: aliceblue;"  href="Login.html">
+                  Login     <i class="fa-solid fa-user"></i> 
+            </a></div>
+        </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to CV Builder</h1>
+            <p>Create and manage your CV with ease.</p>
+            <a href="/indexs/CreateCV.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h1 style="font-size: 48px ; padding-bottom: 15px;">Welcome to 
+                <a style="color: blueviolet; font-weight:800;" href="Home.html"> My CV </a></h1>
+        </div>
+    </section>
+    <section  id="services" class="services">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We help you craft professional CVs to land your dream job.</p>
+            <h2>Our Services</h2>
+            <div class="service">
+                <h3>CV Writing</h3>
+                <p>Professional CV writing tailored to your career goals.</p>
+            </div>
+            <div class="service">
+                <h3>Resume Review</h3>
+                <p>Expert review and feedback on your existing resume.</p>
+            </div>
+            <div class="service">
+                <h3>Cover Letters</h3>
+                <p>Custom cover letters to complement your CV.</p>
+            </div>
+        </div>
+    </section>
+    <main class="container">
+        <section class="shared-cvs">
+            <h2 style="
+            display: flex;
+            justify-content: center;
+            font-size: 40px;
+            color: darkblue;">Shared CVs</h2>
+            <div id="cvCardsContainer" class="cv-cards-container">
+                <!-- Các thẻ CV sẽ được thêm ở đây -->
+            </div>
+        </section>
+    </main>
+    
+   
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CV Builder. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

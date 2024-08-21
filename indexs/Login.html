@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/Login.css">
+    <script src="/javascripts/Login.js" defer></script>
+    <script src="https://kit.fontawesome.com/c9f5871d83.js" crossorigin="anonymous"></script>
+    <title>Login</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="Home.html">Home</a>
+            <a href="#about">About</a>
+            <a href="CreateCV.html">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-user"></i>  
+        </div>
+    </header>
+    
+    <div class="background"></div>
+    
+    <section class="home">
+        <div class="content">
+            <a href="#" class="logo"><i class="fa-solid fa-paper-plane"></i>My CV </a>
+            <h2>Welcome!</h2>
+            <h3>To purchase</h3>
+            <pre>You first need to give us your
+login information here</pre>
+            <div class="icon">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>    
+        </div>
+        
+        <div class="login">
+            <h2>Login</h2>
+            <div class="input">
+                <form action="/login" method="POST">
+                    <label for="username">Username:</label>
+                    <input type="text" class="input1" id="username" name="username" placeholder="Username" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" class="input1" id="password" name="password" placeholder="Password" required>
+                    
+                    <button class="btn">Login</button>
+                </form>
+                <div class="sign-up">
+                    <p>Don't have an account?</p>
+                    <a style="margin-left: 4px;" href="SignUp.html">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

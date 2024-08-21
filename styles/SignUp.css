@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu của body */
+}
+
+/* Header */
+.header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    z-index: 99;
+    background: transparent;
+}
+
+.header .nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    border-bottom: 4px solid #fff;
+    transition: 0.5s;
+}
+
+.search i {
+    color: #fff;
+    font-size: 1.5em;
+    margin-left: 20px;
+}
+
+/* Background */
+.background {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/img/signup.png');
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px);
+    position: absolute; /* Đặt vị trí của background */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Đảm bảo background nằm dưới các phần tử khác */
+}
+
+/* Main Content */
+.home {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    min-height: 100vh; /* Đặt chiều cao tối thiểu bằng chiều cao của màn hình */
+    padding: 20px;
+    margin: 0 auto; /* Center horizontally */
+    background-image: url('/img/bright-pop-landscape-design_23-2149213461.avif');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Đảm bảo rằng nội dung không tràn ra ngoài */
+    position: relative; /* Đảm bảo rằng .home có thể được đặt lên trên background */
+    z-index: 2; /* Đảm bảo .home nằm trên background */
+}
+
+/* Sign Up Form */
+.signup {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.signup h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.signup .input {
+    width: 100%;
+}
+
+.signup .input .input1 {
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+}
+
+::placeholder {
+    color: #fff;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(29, 160, 66);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 7px;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgb(20, 120, 50);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Login Link */
+.signup .login-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.signup .login-link a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .home {
+        padding: 30px;
+    }
+
+    .signup {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+    }
+
+    .signup {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 10px;
+    }
+
+    .signup {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}

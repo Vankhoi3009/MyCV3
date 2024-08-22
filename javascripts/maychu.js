@@ -69,7 +69,14 @@ app.post('/login', (req, res) => {
     });
 });
 
+try{
+    
+    app.listen(port, () => {
+        console.log(`Server running at http://localhost:${port}`);
+    });
+    
+}
+catch(error){
+    console.log(`error :${error}`);
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
+}

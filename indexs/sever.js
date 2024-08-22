@@ -28,13 +28,9 @@ export function queryDatabase(fullName, email, username, password ) {
     // Chuyển đổi mili giây thành giây
     const milliseconds = Date.now();
     const seconds = Math.floor(milliseconds / 1000);
-
-    // Định dạng ngày tháng năm
     const formattedDate = `${day}-${month}-${year}`;
-
     const query = 'INSERT INTO users (id,full_name, email, username, password,created_at) VALUES (?, ?, ?, ?, ?, ?)';
 
-    // Thực hiện câu lệnh SQL
     connection.query(query, [seconds, fullName, email, username, password, formattedDate], (err, results) => {
         if (err) {
             alert('Lỗi khi thực hiện truy vấn: ', err);

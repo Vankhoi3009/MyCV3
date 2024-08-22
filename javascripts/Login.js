@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('/login', {
+
+            const response = await fetch('http://localhost:3000/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -27,13 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 alert("Login successful!");
-                window.location.href = "Home.html"; // Điều hướng đến trang chủ sau khi đăng nhập thành công
+                window.location.href = "/index.html"; // Điều hướng đến trang chủ sau khi đăng nhập thành công
             } else {
                 alert(result.message || "Login failed. Please try again.");
             }
         } catch (error) {
-            console.error("Error during login:", error);
-            alert("An error occurred during login. Please try again later.");
+            alert("An error occurred during login. Please try again later: " + error);
         }
     });
 });
@@ -45,10 +45,10 @@ app.use(express.json());
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-
-    // Giả sử bạn kiểm tra username và password trong cơ sở dữ liệu
     if (username === "admin" && password === "password123") {
         res.json({ success: true, message: "Login successful" });
+        window.location.href = '/index.html';
+    
     } else {
         res.status(401).json({ success: false, message: "Invalid username or password" });
     }

@@ -1,4 +1,3 @@
-// server.js (Máy chủ Node.js)
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -7,8 +6,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(cors()); // Cho phép truy cập từ các nguồn khác
-
+app.use(cors()); 
 const connection = mysql.createConnection({
     host: 'database-2.cvc8e4mqgkzh.us-east-1.rds.amazonaws.com',
     user: 'admin',
@@ -28,39 +26,43 @@ app.post('/signup', (req, res) => {
     const seconds = Math.floor(milliseconds / 1000);
     const formattedDate = `${day}-${month}-${year}`;
     const query = 'INSERT INTO users (id, full_name, email, username, password, created_at) VALUES (?, ?, ?, ?, ?, ?)';
-
     connection.query(query, [seconds, fullName, email, username, password, formattedDate], (err, results) => {
         if (err) {
-            res.status(500).json({ message: 'Lỗi khi thực hiện truy vấn', error: err });
-            return;
+            res.status(500).json({ message: 'Signup error ', error: err });
+            console.log(`Signup error ! `);
+            return false;
         }
-        res.status(200).json({ message: 'Dữ liệu đã được chèn thành công', results });
+        res.status(200).json({ message: 'Signup success', results });
+        console.log(`Signup success `);
+        return true
     });
 });
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
     if (!username || !password) {
+        console.log(`Vui lòng nhập tên người dùng và mật khẩu `);
         return res.status(400).json({ message: 'Vui lòng nhập tên người dùng và mật khẩu.' });
     }
-
-    const query2 = 'SELECT * FROM users WHERE username = ?';
-    const query = "SELECT * FROM MyCVDatabase.users where username='lovankhoi0110'";
+    const query = "SELECT * FROM MyCVDatabase.users where username='?'";
     connection.query(query, [username], async (err, results) => {
         if (err) {
-            console.error('Lỗi khi thực hiện truy vấn: ', err);
+            console.log(`error login ! `);
             return res.status(500).json({ message: 'Lỗi khi thực hiện truy vấn.', error: err });
         }
 
         if (results.length === 0) {
+            console.log(`Tên người dùng không tồn tại ! `);
             return res.status(401).json({ message: 'Tên người dùng không tồn tại.' });
         }
         const user = results[0];
 
         if (password==user.password) {
+            console.log(`Đăng nhập thành công `);
             res.status(200).json({ message: 'Đăng nhập thành công', user });
             return user.id
         } else {
+            console.log(`Mật khẩu không chính xác. `);
             res.status(401).json({ message: 'Mật khẩu không chính xác.' });
             return false
         }
